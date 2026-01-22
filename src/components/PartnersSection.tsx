@@ -1,13 +1,13 @@
-import { Sparkles, Sun, Diamond, Bird, Activity, Zap, Circle } from "lucide-react"
+import { Sword, Shield, Sparkles, Crown, Gem, Zap, Star } from "lucide-react"
 
 const partners = [
-  { name: "Синергия", icon: Sparkles },
-  { name: "Горизонт", icon: Sun },
-  { name: "Катализ", icon: Diamond },
-  { name: "Феникс", icon: Bird },
-  { name: "Пульс", icon: Activity },
-  { name: "Солярис", icon: Zap },
-  { name: "Аврора", icon: Circle },
+  { name: "EasyPay", icon: Sparkles },
+  { name: "QIWI", icon: Zap },
+  { name: "YooMoney", icon: Star },
+  { name: "Visa", icon: Shield },
+  { name: "Mastercard", icon: Gem },
+  { name: "PayPal", icon: Crown },
+  { name: "СБП", icon: Sword },
 ]
 
 export function PartnersSection() {
@@ -16,7 +16,7 @@ export function PartnersSection() {
       {partners.map((partner) => (
         <div key={partner.name} className="flex items-center gap-2 text-gray-500">
           <partner.icon className="h-4 w-4" />
-          <span className="text-sm font-medium">{partner.name}™</span>
+          <span className="text-sm font-medium">{partner.name}</span>
         </div>
       ))}
     </section>
