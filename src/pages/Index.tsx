@@ -4,6 +4,7 @@ import { PartnersSection } from "@/components/PartnersSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
 import { PrivilegesComparison } from "@/components/PrivilegesComparison"
 import { UnbanSection } from "@/components/UnbanSection"
+import { SupportSection } from "@/components/SupportSection"
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
       <PrivilegesComparison />
       <UnbanSection />
       <FeaturesSection />
+      <SupportSection />
       <footer className="py-8 text-center text-sm text-gray-400">
         Играй на Xaoc World с привилегиями —{" "}
         <span className="font-medium text-white">открой новые возможности уже сегодня.</span>

@@ -15,11 +15,11 @@ export function Header() {
         <a href="#привилегии" className="text-sm text-gray-300 hover:text-white transition-colors">
           Привилегии
         </a>
+        <a href="#поддержка" className="text-sm text-gray-300 hover:text-white transition-colors">
+          Поддержка
+        </a>
         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors flex items-center gap-1">
           Возможности <ChevronDown className="h-4 w-4" />
-        </a>
-        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-          О сервере
         </a>
         <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
           Правила
