@@ -33,7 +33,7 @@ export function Header() {
         variant="outline"
         className="rounded-full border-violet-500 text-violet-400 hover:bg-violet-500/10 hover:text-violet-300 bg-transparent"
       >
-        IP: play.xaoc.world
+        IP: d13.aurorix.net:25989
       </Button>
     </header>
   )
