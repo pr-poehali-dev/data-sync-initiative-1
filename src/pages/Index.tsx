@@ -2,6 +2,7 @@ import { Header } from "@/components/Header"
 import { HeroSection } from "@/components/HeroSection"
 import { PartnersSection } from "@/components/PartnersSection"
 import { FeaturesSection } from "@/components/FeaturesSection"
+import { PrivilegesComparison } from "@/components/PrivilegesComparison"
 
 export default function Index() {
   return (
@@ -9,6 +10,7 @@ export default function Index() {
       <Header />
       <HeroSection />
       <PartnersSection />
+      <PrivilegesComparison />
       <FeaturesSection />
       <footer className="py-8 text-center text-sm text-gray-400">
         Играй на Xaoc World с привилегиями —{" "}
