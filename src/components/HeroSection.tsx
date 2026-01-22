@@ -48,7 +48,7 @@ export function HeroSection() {
             <div className="space-y-3">
               <div className="flex items-center justify-between py-2 border-b border-[#262626]">
                 <span className="text-sm text-gray-400">IP адрес</span>
-                <code className="text-sm text-white font-mono bg-[#1f1f1f] px-2 py-1 rounded">play.xaocworld.ru</code>
+                <code className="text-sm text-white font-mono bg-[#1f1f1f] px-2 py-1 rounded">d13.aurorix.net:25989</code>
               </div>
               <div className="flex items-center justify-between py-2 border-b border-[#262626]">
                 <span className="text-sm text-gray-400">Версии</span>

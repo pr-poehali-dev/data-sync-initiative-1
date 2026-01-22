@@ -20,7 +20,7 @@ export function LinkAccountsCard() {
         </div>
         <div className="flex items-center gap-2 text-xs text-gray-400">
           <Server className="h-3.5 w-3.5" />
-          <span>IP: <span className="text-white font-mono">play.xaocworld.ru</span></span>
+          <span>IP: <span className="text-white font-mono">d13.aurorix.net:25989</span></span>
         </div>
       </div>
 
