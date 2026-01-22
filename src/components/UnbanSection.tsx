@@ -1,10 +1,10 @@
 import { ShieldAlert, Info, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { PaymentModal } from "@/components/PaymentModal"
 import { useState } from "react"
 
 export function UnbanSection() {
-  const [nickname, setNickname] = useState("")
-  const [email, setEmail] = useState("")
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false)
 
   return (
     <section className="px-4 py-16">
@@ -38,64 +38,35 @@ export function UnbanSection() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="space-y-4">
-                <div>
-                  <label className="mb-2 flex items-center gap-1 text-sm text-gray-300">
-                    Твой никнейм <span className="text-red-400">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Steve_2077"
-                    value={nickname}
-                    onChange={(e) => setNickname(e.target.value)}
-                    className="w-full rounded-lg bg-[#0a0a0a] border border-[#262626] px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-red-500/50 transition-colors"
-                  />
-                  <p className="mt-1 text-xs text-gray-500">Точный никнейм как в игре</p>
-                </div>
-
-                <div>
-                  <label className="mb-2 flex items-center gap-1 text-sm text-gray-300">
-                    Email для чека <span className="text-gray-500">(необязательно)</span>
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="your@email.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full rounded-lg bg-[#0a0a0a] border border-[#262626] px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-red-500/50 transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div className="rounded-xl bg-[#0a0a0a] border border-[#262626] p-6 flex flex-col justify-between">
+            <div className="rounded-xl bg-[#0a0a0a] border border-[#262626] p-6 mb-6">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
                   <p className="text-sm text-gray-400 mb-2">Стоимость разбана</p>
-                  <div className="flex items-baseline gap-2 mb-4">
+                  <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-white">300₽</span>
                     <span className="text-sm text-gray-500">один раз</span>
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                      <CheckCircle2 className="h-4 w-4 text-green-500" />
-                      <span>Мгновенная обработка</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                      <CheckCircle2 className="h-4 w-4 text-green-500" />
-                      <span>Безопасная оплата</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                      <CheckCircle2 className="h-4 w-4 text-green-500" />
-                      <span>Поддержка 24/7</span>
-                    </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle2 className="h-4 w-4 text-green-500" />
+                    <span>Мгновенная обработка</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle2 className="h-4 w-4 text-green-500" />
+                    <span>Безопасная оплата</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle2 className="h-4 w-4 text-green-500" />
+                    <span>Поддержка 24/7</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <Button 
+              onClick={() => setIsPaymentModalOpen(true)}
               className="w-full bg-red-600 hover:bg-red-700 text-white text-lg py-6 rounded-xl"
-              disabled={!nickname}
             >
               Купить разбан за 300₽
             </Button>
@@ -126,6 +97,14 @@ export function UnbanSection() {
           </div>
         </div>
       </div>
+
+      <PaymentModal
+        isOpen={isPaymentModalOpen}
+        onClose={() => setIsPaymentModalOpen(false)}
+        productName="Разбан"
+        productPrice={300}
+        productType="unban"
+      />
     </section>
   )
 }

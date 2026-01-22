@@ -1,5 +1,7 @@
 import { Check, X, Crown, Zap, Shield, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { PaymentModal } from "@/components/PaymentModal"
+import { useState } from "react"
 
 const privileges = [
   {
@@ -119,6 +121,15 @@ const privileges = [
 ]
 
 export function PrivilegesComparison() {
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false)
+  const [selectedPrivilege, setSelectedPrivilege] = useState<{ name: string; price: number } | null>(null)
+
+  const handleBuyClick = (name: string, priceStr: string) => {
+    const price = parseInt(priceStr.replace('₽', ''))
+    setSelectedPrivilege({ name, price })
+    setIsPaymentModalOpen(true)
+  }
+
   return (
     <section className="px-4 py-16" id="привилегии">
       <div className="mx-auto max-w-7xl">
@@ -166,7 +177,10 @@ export function PrivilegesComparison() {
                   ))}
                 </div>
 
-                <Button className="w-full bg-violet-600 hover:bg-violet-700 text-white">
+                <Button 
+                  onClick={() => handleBuyClick(privilege.name, privilege.price)}
+                  className="w-full bg-violet-600 hover:bg-violet-700 text-white"
+                >
                   Купить {privilege.name}
                 </Button>
               </div>
@@ -185,6 +199,16 @@ export function PrivilegesComparison() {
           </Button>
         </div>
       </div>
+
+      {selectedPrivilege && (
+        <PaymentModal
+          isOpen={isPaymentModalOpen}
+          onClose={() => setIsPaymentModalOpen(false)}
+          productName={selectedPrivilege.name}
+          productPrice={selectedPrivilege.price}
+          productType="privilege"
+        />
+      )}
     </section>
   )
 }
