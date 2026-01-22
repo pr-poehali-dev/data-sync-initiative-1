@@ -8,7 +8,9 @@ export function SupportSection() {
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
     if (!name || !email || !message) {
@@ -16,13 +18,39 @@ export function SupportSection() {
       return
     }
 
-    console.log("Обращение в поддержку:", { name, email, subject, message })
-    alert(`Спасибо за обращение, ${name}!\n\nМы получили твоё сообщение и ответим на ${email} в течение 24 часов.`)
-    
-    setName("")
-    setEmail("")
-    setSubject("")
-    setMessage("")
+    if (message.length < 10) {
+      alert("Сообщение должно содержать минимум 10 символов!")
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('https://functions.poehali.dev/7ad96f7f-0f58-4a09-b7d0-4b52ac31ba19', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, subject, message })
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        alert(`Спасибо за обращение, ${name}!\n\nМы получили твоё сообщение и ответим на ${email} в течение 24 часов.`)
+        setName("")
+        setEmail("")
+        setSubject("")
+        setMessage("")
+      } else {
+        alert(`Ошибка при отправке: ${data.error || 'Неизвестная ошибка'}`)
+      }
+    } catch (error) {
+      console.error('Error sending support request:', error)
+      alert('Не удалось отправить заявку. Проверь подключение к интернету и попробуй ещё раз.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -148,9 +176,10 @@ export function SupportSection() {
               <Button
                 type="submit"
                 className="w-full bg-violet-600 hover:bg-violet-700 text-white py-6 text-lg"
+                disabled={isSubmitting}
               >
                 <Send className="mr-2 h-5 w-5" />
-                Отправить заявку
+                {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
               </Button>
             </form>
           </div>

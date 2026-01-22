@@ -1,0 +1,39 @@
+{
+  "tests": [
+    {
+      "name": "Valid support request",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "TestUser",
+        "email": "test@example.com",
+        "subject": "bug",
+        "message": "This is a test support request"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Missing required fields",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "TestUser"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "OPTIONS request for CORS",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    }
+  ]
+}
