@@ -3,10 +3,10 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 
 const privileges = [
-  { name: "VIP", info: "Приватный чат, киты, /fly", price: "299₽/мес", color: "bg-yellow-600" },
-  { name: "Premium", info: "Префикс, /home x5, /back", price: "199₽/мес", color: "bg-purple-600" },
-  { name: "Deluxe", info: "Цветной ник, /tpa, /warp", price: "99₽/мес", color: "bg-blue-600" },
-  { name: "Starter", info: "Набор старта, защита регионов", price: "49₽/мес", color: "bg-green-600" },
+  { name: "VIP", info: "Приватный чат, киты, /fly", price: "999₽", color: "bg-yellow-600" },
+  { name: "Premium", info: "Префикс, /home x5, /back", price: "599₽", color: "bg-purple-600" },
+  { name: "Deluxe", info: "Цветной ник, /tpa, /warp", price: "299₽", color: "bg-blue-600" },
+  { name: "Starter", info: "Набор старта, защита регионов", price: "149₽", color: "bg-green-600" },
 ]
 
 export function LinkAccountsCard() {

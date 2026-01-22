@@ -22,7 +22,7 @@ export function SendFundsCard() {
             <CreditCard className="h-5 w-5 text-gray-500" />
             <div>
               <p className="text-sm font-medium text-white">Выберите привилегию</p>
-              <p className="text-xs text-gray-500">На 1 или 3 месяца</p>
+              <p className="text-xs text-gray-500">Навсегда</p>
             </div>
           </div>
           <ChevronDown className="h-4 w-4 text-gray-500" />
@@ -54,9 +54,8 @@ export function SendFundsCard() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-2">
-          <span className="text-sm text-gray-400">Автопродление</span>
-          <Switch className="data-[state=checked]:bg-violet-600" />
+        <div className="rounded-lg bg-violet-500/10 border border-violet-500/20 px-3 py-2.5">
+          <p className="text-xs text-violet-400 text-center">✨ Привилегия выдаётся навсегда</p>
         </div>
       </div>
     </div>
