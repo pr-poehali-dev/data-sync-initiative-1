@@ -4,7 +4,6 @@ import { useState } from "react"
 
 export function SupportSection() {
   const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
 
@@ -13,7 +12,7 @@ export function SupportSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    if (!name || !email || !message) {
+    if (!name || !message) {
       alert("Заполни все обязательные поля!")
       return
     }
@@ -31,15 +30,14 @@ export function SupportSection() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, subject, message })
+        body: JSON.stringify({ name, email: name, subject, message })
       })
 
       const data = await response.json()
 
       if (response.ok) {
-        alert(`Спасибо за обращение, ${name}!\n\nМы получили твоё сообщение и ответим на ${email} в течение 24 часов.`)
+        alert(`Спасибо за обращение, ${name}!\n\nМы получили твоё сообщение и свяжемся с тобой в Discord в течение 24 часов.`)
         setName("")
-        setEmail("")
         setSubject("")
         setMessage("")
       } else {
@@ -113,27 +111,13 @@ export function SupportSection() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="mb-2 flex items-center gap-2 text-sm text-gray-300">
-                  Твоё имя / никнейм <span className="text-red-400">*</span>
+                  Никнейм в Discord <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Steve_2077"
+                  placeholder="username#1234"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full rounded-lg bg-[#0a0a0a] border border-[#262626] px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-violet-500/50 transition-colors"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="mb-2 flex items-center gap-2 text-sm text-gray-300">
-                  Email для связи <span className="text-red-400">*</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full rounded-lg bg-[#0a0a0a] border border-[#262626] px-4 py-3 text-white placeholder-gray-600 outline-none focus:border-violet-500/50 transition-colors"
                   required
                 />

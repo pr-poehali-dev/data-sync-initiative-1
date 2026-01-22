@@ -43,11 +43,10 @@ def handler(event: dict, context) -> dict:
     
     # Validate required fields
     name = body.get('name', '').strip()
-    email = body.get('email', '').strip()
     message = body.get('message', '').strip()
     subject = body.get('subject', 'Не указана')
     
-    if not name or not email or not message:
+    if not name or not message:
         return {
             'statusCode': 400,
             'headers': {**cors_headers, 'Content-Type': 'application/json'},
@@ -81,14 +80,9 @@ def handler(event: dict, context) -> dict:
             "color": 7506394,  # Violet color
             "fields": [
                 {
-                    "name": "👤 Имя / Никнейм",
+                    "name": "💬 Никнейм в Discord",
                     "value": name,
-                    "inline": True
-                },
-                {
-                    "name": "📧 Email",
-                    "value": email,
-                    "inline": True
+                    "inline": False
                 },
                 {
                     "name": "📋 Тема",
