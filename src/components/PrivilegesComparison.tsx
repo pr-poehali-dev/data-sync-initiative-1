@@ -114,7 +114,7 @@ const privileges = [
       { name: "Все команды телепортации + /tp", available: true },
       { name: "/back после смерти + /back", available: true },
       { name: "/fly + /god (неограниченно)", available: true },
-      { name: "Все киты без ограничений", available: true },
+      { name: "Киты каждые 2 часа", available: true },
       { name: "Приватный чат + голосовой", available: true },
     ]
   },
