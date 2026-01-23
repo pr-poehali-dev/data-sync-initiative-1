@@ -25,7 +25,7 @@ const privileges = [
   },
   {
     name: "Титан",
-    price: "60₽",
+    price: "100₽",
     color: "bg-cyan-600",
     icon: Zap,
     description: "Больше возможностей",
@@ -44,7 +44,7 @@ const privileges = [
   },
   {
     name: "Делюкс",
-    price: "100₽",
+    price: "150₽",
     color: "bg-blue-600",
     icon: Star,
     description: "Комфортная игра",
@@ -63,7 +63,7 @@ const privileges = [
   },
   {
     name: "Император",
-    price: "140₽",
+    price: "180₽",
     color: "bg-red-600",
     icon: Crown,
     description: "Властвуй на сервере",
@@ -82,7 +82,7 @@ const privileges = [
   },
   {
     name: "Легенда",
-    price: "210₽",
+    price: "250₽",
     color: "bg-purple-600",
     icon: Star,
     description: "Легендарный статус",
@@ -101,7 +101,7 @@ const privileges = [
   },
   {
     name: "ВИП",
-    price: "300₽",
+    price: "350₽",
     color: "bg-yellow-600",
     icon: Crown,
     description: "Максимум возможностей",
