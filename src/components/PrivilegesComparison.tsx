@@ -110,7 +110,7 @@ const privileges = [
       { name: "Защита регионов (неограниченно)", available: true },
       { name: "/home (неограниченно)", available: true },
       { name: "Префикс [VIP]", available: true },
-      { name: "Цветной ник + эффекты", available: true },
+      { name: "Цветной ник", available: true },
       { name: "Все команды телепортации + /tp", available: true },
       { name: "/back после смерти + /back", available: true },
       { name: "/fly + /god (неограниченно)", available: true },
