@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 
 export function Header() {
@@ -18,8 +18,8 @@ export function Header() {
         <a href="#поддержка" className="text-sm text-gray-300 hover:text-white transition-colors">
           Поддержка
         </a>
-        <a href="#" className="text-sm text-gray-300 hover:text-white transition-colors flex items-center gap-1">
-          Возможности <ChevronDown className="h-4 w-4" />
+        <a href="#о-сервере" className="text-sm text-gray-300 hover:text-white transition-colors">
+          О сервере
         </a>
         <a href="#правила" className="text-sm text-gray-300 hover:text-white transition-colors">
           Правила

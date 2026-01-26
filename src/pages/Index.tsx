@@ -6,6 +6,7 @@ import { PrivilegesComparison } from "@/components/PrivilegesComparison"
 import { UnbanSection } from "@/components/UnbanSection"
 import { RulesSection } from "@/components/RulesSection"
 import { SupportSection } from "@/components/SupportSection"
+import { AboutServerSection } from "@/components/AboutServerSection"
 
 export default function Index() {
   return (
@@ -13,6 +14,7 @@ export default function Index() {
       <Header />
       <HeroSection />
       <PartnersSection />
+      <AboutServerSection />
       <PrivilegesComparison />
       <UnbanSection />
       <FeaturesSection />
